@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Terminal X - Full Backup - Login{% endblock title %}
+
+{% block content %}
+<div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+    <div class="wrapper wrapper--w780">
+        <div class="mt-4 card card-3">
+            <div class="card-heading"></div>
+            <div class="card-body">
+                <h2 class="title">Login</h2>
+                <form method="POST">
+                    {%  csrf_token %}
+                    <!--username field-->
+                    <div class="input-group">
+                        <input class="input--style-3" type="text" placeholder="Username" name="username" id="username">
+                    </div>
+                    <!--password field-->
+                    <div style="flex-direction: row;" class="input-group d-flex flex-row">
+                        <input style="width: 180px;" class="showpass input--style-3" type="password" placeholder="Password" name="password">    
+                        <i style="color: #ccc; margin-top: 10px;" class="eye fa-solid fa-eye-slash" onclick="showpass()"></i>
+                    </div>
+                   
+                    
+                    <div class="text-center p-t-10">
+                        <!--login button-->
+                        <button class="mb-5 btn btn--pill btn--green" type="submit">Login</button><br>
+                        <!--Link to the sign up page-->
+                        <a class="text-center" href="">Create an account</a>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
