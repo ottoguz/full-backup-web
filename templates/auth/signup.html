@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Stock Control - Signup{% endblock title %}
+
+{% block content %}
+<div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+    <div class="wrapper wrapper--w780">
+        <div class="mt-4 card card-3">
+            <div class="card-heading"></div>
+            <div class="card-body">
+                <h2 class="title">Signup</h2>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="input-group">
+                         <!--username field-->
+                        <input class="input--style-3" type="text" placeholder="Username" name="username" id="username">
+                    </div>
+                    <div class="input-group">
+                         <!--email field-->
+                        <input class="input--style-3" type="email" placeholder="Email" name="email" id="email">
+                    </div>
+                    <div class="input-group">
+                         <!--password field-->
+                        <input class="showpass input--style-3" type="password" placeholder="Password" name="password" onclick="showpass()">
+                    </div>
+                    <div class="input-group">
+                         <!--confirm password field-->
+                        <input class="showpass input--style-3" type="password" placeholder="Confirm password" name="confpass" id="confpass">
+                    </div>
+                    <div class="text-center p-t-10">
+                        <!--Sign up button (will send a welcome card to user's email)-->
+                        <button class="mb-4 btn btn--pill btn--green" type="submit">Signup</button><br>
+                         <!--link to login page-->
+                        <a href="{% url 'login' %}">I already have an account</a>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
