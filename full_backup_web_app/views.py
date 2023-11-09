@@ -31,3 +31,28 @@ def home(request):
     else:
         messages.error(request, "You must be logged in to grant access to Stock Control")
         return redirect("login")
+    
+# Logout function
+@login_required
+def auth_logout(request):
+    logout(request)
+    messages.info(request, "You have logged out successfully")
+    return redirect("login")
+    
+#View for the signup template
+def signup(request):
+    if request.method == "POST":
+        username = request.POST.get("username")
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+        confpass = request.POST.get("confpass")
+        if password != confpass:
+            messages.error(request, "Your password and confirmation do not match")
+        else:
+            my_user = User.objects.create_user(username, email, password)
+            my_user.save()
+            my_user.clean_fields()
+            messages.success(request, f"User: {my_user.username} successfully created")
+            # send_email(username, email)
+            return redirect("login")
+    return render(request, "auth/signup.html")
