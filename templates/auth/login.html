@@ -5,7 +5,7 @@
 {% block content %}
 <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
     <div class="wrapper wrapper--w780">
-        <div class="mt-4 card card-3">
+        <div class="mt-4 card card-3" style="width: 1500px; height: 780px;">
             <div class="card-heading"></div>
             <div class="card-body">
                 <h2 class="title">Login</h2>
@@ -13,12 +13,12 @@
                     {%  csrf_token %}
                     <!--username field-->
                     <div class="input-group">
-                        <input class="input--style-3" type="text" placeholder="Username" name="username" id="username">
+                        <input class="input--style-3" type="text" placeholder="Usuário" name="username" id="username">
                     </div>
                     <!--password field-->
                     <div style="flex-direction: row;" class="input-group d-flex flex-row">
-                        <input style="width: 180px;" class="showpass input--style-3" type="password" placeholder="Password" name="password">    
-                        <i style="color: #ccc; margin-top: 10px;" class="eye fa-solid fa-eye-slash" onclick="showpass()"></i>
+                        <input style="width: 180px;" class="showpass input--style-3" type="password" placeholder="Senha" name="password">    
+                        <i style="color: #ccc; margin-top: 10px; margin-left: 400px;" class="eye fa-solid fa-eye-slash" onclick="showpass()"></i>
                     </div>
                    
                     

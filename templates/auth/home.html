@@ -3,5 +3,36 @@
 {% block title %}Stock Control - Home{% endblock title %}
 
 {% block content %}
-   
+<div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins"> 
+<div class="wrapper wrapper--w780">
+    <div class="mt-4 card card-3" style="width: 1500px; height: 780px;">
+        <!-- <div class="card-heading"></div> -->
+        <div class="card-body">
+            <h2 class="title">Full Backup</h2>
+            <!-- <form method="POST"> -->
+                {%  csrf_token %}
+                <!--username field-->
+                <div style="flex-direction: row;" class="input-group d-flex flex-row">
+                    <input style="width: 1000px; position: absolute;" class="input--style-3 source" type="text" placeholder="Diretório de destino" name="source"> 
+                    <button style="margin-left: 1200px;" class="btn btn--pill" onclick="source()">Buscar</button>   
+                </div>
+                <!--password field-->
+                <div style="flex-direction: row; margin-top: 100px;" class="input-group d-flex flex-row">
+                    <input style="width: 1000px; position: absolute;" class="input--style-3 destination" type="text" placeholder="Diretório de destino" name="destination"> 
+                    <button style="margin-left: 1200px;" class="btn btn--pill" onclick="{ destination() }">Buscar</button>   
+                </div>
+               
+                
+                <div style="margin-top: 200px;" class="text-center p-t-10">
+                    <!--login button-->
+                    <button style="width: 500px; height: 60px;" class="mb-5 btn btn--pill btn--green" type="submit">Backup</button><br>
+                    <!--Link to the sign up page-->
+                    <!-- <a class="text-center" href="{% url 'signup' %}">Create an account</a> -->
+                </div>
+                
+            <!-- </form> -->
+        </div>
+    </div>
+</div>
+</div>
 {% endblock content %}
