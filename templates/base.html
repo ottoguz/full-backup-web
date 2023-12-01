@@ -141,6 +141,15 @@
         xhr.open('GET', '{% url "destination" %}', true);
         xhr.send();
         }
+
+        function startBackup() {
+            var csrfToken = document.getElementsByName('csrfmiddlewaretoken')[0].value;
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '{% url "start_backup" %}', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.setRequestHeader('X-CSRFToken', csrfToken);
+            xhr.send();
+        }
     </script>
 
     <!--Fontawesome icons-->
